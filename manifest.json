@@ -1,0 +1,22 @@
+{
+  "name": "Victorize",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Victorize your annoying Facebook emotions!",
+  "homepage_url": "http://bajzath.hu",
+  "author": "Arpad Bajzath",
+  "icons": {
+    "16": "icons/app-icon.png",
+    "48": "icons/app-icon.png",
+    "128": "icons/app-icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "*://*.facebook.com/*"
+  ],
+  "content_scripts": [{
+    "matches": ["http://facebook.com/*", "https://facebook.com/*", "https://*.facebook.com/*"],
+    "js": ["src/content.js"],
+    "run_at":"document_start"
+  }]
+}
